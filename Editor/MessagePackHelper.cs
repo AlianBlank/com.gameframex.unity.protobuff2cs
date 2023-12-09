@@ -32,7 +32,6 @@ namespace Proto2CS.Editor
             StringBuilder sb = new StringBuilder();
             StringBuilder sbTemp = new StringBuilder();
             sb.AppendLine("using System;");
-            sb.AppendLine("using MessagePack;");
             sb.AppendLine("using System.Collections.Generic;");
             if (isServer)
             {
@@ -89,7 +88,7 @@ namespace Proto2CS.Editor
 
                     sb.Append($"\t######\n");
 
-                    sb.Append($"\t[MessagePackObject(true)]\n");
+                    sb.Append($"\t[MessagePackageObject]\n");
 
 
                     if (isServer)

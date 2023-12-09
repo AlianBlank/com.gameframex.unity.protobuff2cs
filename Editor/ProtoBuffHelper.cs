@@ -36,13 +36,14 @@ namespace Proto2CS.Editor
             sb.AppendLine("using System;");
             sb.AppendLine("using ProtoBuf;");
             sb.AppendLine("using System.Collections.Generic;");
+            sb.AppendLine("using GameFrameX.Network;");
             if (isServer)
             {
                 sb.AppendLine("using Server.Core.Net.Messages;");
             }
             else
             {
-                sb.AppendLine("using Protocol;");
+                // sb.AppendLine("using Protocol;");
             }
 
             sb.AppendLine();
@@ -93,7 +94,7 @@ namespace Proto2CS.Editor
                         sb.Append($"\t######\n");
                     }
 
-                    sb.Append($"\t[ProtoContract]\n");
+                    sb.Append($"\t[MessagePackageObject]\n");
 
 
                     if (isServer)
@@ -102,7 +103,7 @@ namespace Proto2CS.Editor
                     }
                     else
                     {
-                        sb.Append($"\tpublic partial class {msgName} : Protocol.Message");
+                        sb.Append($"\tpublic partial class {msgName} : MessageObject");
                     }
 
                     if (parentClass == "IActorMessage" || parentClass.Contains("IRequestMessage") || parentClass.Contains("IResponseMessage"))
