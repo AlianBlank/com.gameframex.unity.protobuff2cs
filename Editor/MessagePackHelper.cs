@@ -35,7 +35,7 @@ namespace Proto2CS.Editor
             sb.AppendLine("using System.Collections.Generic;");
             if (isServer)
             {
-                sb.AppendLine("using Server.Core.Net.Messages;");
+                sb.AppendLine("using Server.NetWork.Messages;");
             }
             else
             {
@@ -89,16 +89,8 @@ namespace Proto2CS.Editor
                     sb.Append($"\t######\n");
 
                     sb.Append($"\t[MessagePackageObject]\n");
-
-
-                    if (isServer)
-                    {
-                        sb.Append($"\tpublic partial class {msgName} : Server.Core.Net.Messages.MessageObject");
-                    }
-                    else
-                    {
-                        sb.Append($"\tpublic partial class {msgName} : MessageObject");
-                    }
+                    
+                    sb.Append($"\tpublic partial class {msgName} : MessageObject");
 
 
                     if (parentClass == "IMessage" || parentClass.Contains("IRequestMessage") || parentClass.Contains("IResponseMessage"))
