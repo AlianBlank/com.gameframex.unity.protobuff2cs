@@ -33,16 +33,20 @@ namespace Proto2CS.Editor
 
             StringBuilder sb = new StringBuilder();
             StringBuilder sbTemp = new StringBuilder();
-            sb.AppendLine("using System;");
-            sb.AppendLine("using ProtoBuf;");
-            sb.AppendLine("using System.Collections.Generic;");
-            sb.AppendLine("using GameFrameX.Network;");
+
             if (isServer)
             {
-                sb.AppendLine("using Server.Core.Net.Messages;");
+                sb.AppendLine("using System;");
+                sb.AppendLine("using ProtoBuf;");
+                sb.AppendLine("using System.Collections.Generic;");
+                sb.AppendLine("using Server.NetWork.Messages;");
             }
             else
             {
+                sb.AppendLine("using System;");
+                sb.AppendLine("using ProtoBuf;");
+                sb.AppendLine("using System.Collections.Generic;");
+                sb.AppendLine("using GameFrameX.Network;");
                 // sb.AppendLine("using Protocol;");
             }
 
@@ -94,12 +98,12 @@ namespace Proto2CS.Editor
                         sb.Append($"\t######\n");
                     }
 
-                    sb.Append($"\t[MessagePackageObject]\n");
+                    sb.Append($"\t[ProtoContract]\n");
 
 
                     if (isServer)
                     {
-                        sb.Append($"\tpublic partial class {msgName} : Server.Core.Net.Messages.Message");
+                        sb.Append($"\tpublic partial class {msgName} : MessageObject");
                     }
                     else
                     {

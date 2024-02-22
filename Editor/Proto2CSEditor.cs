@@ -8,7 +8,7 @@ namespace Proto2CS.Editor
 
         static Proto2CSEditor()
         {
-            ProtoGenerateHelper = new MessagePackHelper();
+            ProtoGenerateHelper = new ProtoBuffHelper();
         }
 
         [MenuItem("Tools/Proto2CS &C")]
