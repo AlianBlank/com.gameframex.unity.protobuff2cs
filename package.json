@@ -3,7 +3,7 @@
   "displayName": "Proto2CS",
   "category": "Blank",
   "description": "通过将proto文件转换为CS类型",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2017.1",
   "keywords": [
     "Proto2CS",
