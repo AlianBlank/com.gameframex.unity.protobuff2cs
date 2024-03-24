@@ -38,9 +38,6 @@ namespace Proto2CS.Editor
                 case "bytes":
                     typeCs = "byte[]";
                     break;
-                case "map<int32,int64>":
-                    typeCs = "Dictionary<int, long>";
-                    break;
                 case "string":
                     typeCs = "string";
                     break;
@@ -54,6 +51,16 @@ namespace Proto2CS.Editor
                     typeCs = "float";
                     break;
                 default:
+                    if (type.StartsWith("map<"))
+                    {
+                        var typeMap = type.Replace("map", string.Empty).Replace("<", string.Empty).Replace(">", string.Empty).Split(',');
+                        if (typeMap.Length == 2)
+                        {
+                            typeCs = $"Dictionary<{ConvertType(typeMap[0])}, {ConvertType(typeMap[1])}>";
+                            break;
+                        }
+                    }
+
                     typeCs = type;
                     break;
             }
