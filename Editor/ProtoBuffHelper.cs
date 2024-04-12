@@ -46,7 +46,7 @@ namespace Proto2CS.Editor
                 sb.AppendLine("using System;");
                 sb.AppendLine("using ProtoBuf;");
                 sb.AppendLine("using System.Collections.Generic;");
-                sb.AppendLine("using GameFrameX.Network;");
+                sb.AppendLine("using GameFrameX.Network.Runtime;");
                 // sb.AppendLine("using Protocol;");
             }
 

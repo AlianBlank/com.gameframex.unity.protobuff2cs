@@ -39,7 +39,7 @@ namespace Proto2CS.Editor
             }
             else
             {
-                sb.AppendLine("using GameFrameX.Network;");
+                sb.AppendLine("using GameFrameX.Network.Runtime;");
             }
 
             sb.AppendLine();
