@@ -35,7 +35,7 @@ message UserInfo {
   string RoleName = 1; // 角色名
   int64 RoleId = 2; // 角色ID
   int32 Level = 3; // 角色等级
-  DateTime CreateTime = 4; // 创建时间
+  int64 CreateTime = 4; // 创建时间
   int32 VipLevel = 5; // vip等级
 }
 ```
@@ -46,13 +46,13 @@ message UserInfo {
 
 ```protobuf
 // 出售道具 # 这行是对消息体的注释。会生成类的注释
-message ReqSellItem { // IRequestMessage 103  # 这个按// 切分，前面为消息父类, 后面为消息码，自己掌握消息码分类
+message ReqSellItem {// IRequestMessage 103  # 这个按// 切分，前面为消息父类, 后面为消息码，自己掌握消息码分类
   int32 ItemId = 1; // 道具id # 这个是字段的注释。会生成对应的字段注释
 }
 
 // 出售道具 # 这行是对消息体的注释。会生成类的注释
-message ResItemChange { // IResponseMessage 103 # 这个按// 切分，前面为消息父类, 后面为消息码，自己掌握消息码分类
-  map<int32,long> ItemDic = 1; // 变化的道具 # 这个是字段的注释。会生成对应的字段注释
+message ResItemChange {// IResponseMessage 103 # 这个按// 切分，前面为消息父类, 后面为消息码，自己掌握消息码分类
+  map<int32, int32> ItemDic = 1; // 变化的道具 # 这个是字段的注释。会生成对应的字段注释
 }
 ```
 
@@ -64,7 +64,7 @@ message ResItemChange { // IResponseMessage 103 # 这个按// 切分，前面为
 
 上面消息码一致。表示`请求`和`返回`是`成对`出现。
 
-有时候可能会出现以下情况： 
+有时候可能会出现以下情况：
 
 - 只有发送：正常发送
 - 一个发送多个返回：正常接收
