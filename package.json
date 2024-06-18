@@ -1,5 +1,5 @@
 {
-  "name": "com.alianblank.gameframex.unity.protobuff2cs",
+  "name": "com.gameframex.unity.protobuff2cs",
   "displayName": "Proto2CS",
   "category": "Blank",
   "description": "通过将proto文件转换为CS类型",
